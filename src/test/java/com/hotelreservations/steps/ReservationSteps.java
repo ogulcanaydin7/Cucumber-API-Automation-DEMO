@@ -28,7 +28,7 @@ public class ReservationSteps {
         bookingResponse = reservationService.createBooking();
     }
 
-    @Then("Rezervasyon basarili sekildi olusturuldu")
+    @Then("Rezervasyon basarili sekilde olusturuldu")
     public void reservationAssertions() {
         Assertions.assertEquals("Udemy", bookingResponse.getBooking().getFirstname());
         Assertions.assertEquals("Cucumber", bookingResponse.getBooking().getLastname());
@@ -37,7 +37,7 @@ public class ReservationSteps {
         Assertions.assertEquals("Kopek yatagi", bookingResponse.getBooking().getAdditionalneeds());
     }
 
-    @Then("Kullanici olustulan rezervasyonu iptal ediyor")
+    @Then("Kullanici olusturulan rezervasyonu iptal ediyor")
     public void cancelReservation() {
         reservationService.deleteReservation(authKey, bookingResponse.getBookingid());
     }
